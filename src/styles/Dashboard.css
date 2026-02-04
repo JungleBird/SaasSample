@@ -1,0 +1,133 @@
+.dashboard-container {
+  flex: 1;
+  padding: 20px 30px;
+  background-color: #f0f2f5;
+  overflow-y: auto;
+}
+
+.dashboard-content-container {
+  display: flex;
+  background-color: #f5f7fa;
+}
+
+/* Tabs */
+.dashboard-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid #008fa1;
+  margin-bottom: 20px;
+}
+
+.dashboard-tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.dash-tab {
+  padding: 10px 20px;
+  border: none;
+  background-color: #008fa1; /* Teal for inactive by default */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  font-size: 13px;
+}
+
+.dash-tab.active {
+  background-color: #fff; /* White for active */
+  color: #333;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dash-tab.active:nth-child(n) {
+  background-color: #fff;
+  color: #333;
+  border-top: 3px solid #333; /* Visual indicator for active tab on top if needed, image implies simple white */
+  border-top: none;
+}
+
+.bookmark-btn {
+  background-color: #ddd;
+  border: none;
+  padding: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Content Blocks */
+.content-block {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-bottom: 24px;
+  overflow: hidden;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-block:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-1px);
+}
+
+.block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.block-content {
+  padding: 20px;
+}
+
+.block-header h3 {
+  font-size: 11px;
+  color: #4a5568;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.icon-action-btn {
+  border: none;
+  background: none;
+  color: #718096;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.icon-action-btn:hover {
+  color: #008fa1;
+}
+
+/* Standardized Section Headers */
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 1.2rem;
+  color: #555;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Standardized Content List Section */
+.dashboard-content-section {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}

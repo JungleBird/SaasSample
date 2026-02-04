@@ -1,0 +1,510 @@
+/* ============================================================
+   ContentTable Component Styles
+   Styles for the reusable ContentTable component and related elements
+   ============================================================ */
+
+/* Base Table Styling */
+.content-table {
+  width: 100%;
+  border-collapse: separate; /* Allow border radius */
+  border-spacing: 0;
+  background-color: #fff;
+  font-size: 13px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #eaeaea;
+}
+
+.content-table th,
+.content-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.content-table th {
+  background-color: #d6d6d6;
+  color: #4a5568;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.content-table tr:hover {
+  background-color: #f1f5cc;
+}
+
+/* Striped Table Variant */
+.content-table.strip-table tr:nth-child(even) {
+  background-color: #eef7ff;
+}
+
+/* Striped Table Variant */
+.content-table.strip-table tr:nth-child(even):hover {
+  background-color: #f1f5cc;
+}
+
+/* Table Links */
+.invoice-link {
+  color: #3182ce;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.invoice-link:hover {
+  color: #2c5282;
+  text-decoration: underline;
+}
+
+.matter-link {
+  color: #3182ce;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.matter-link:hover {
+  color: #2c5282;
+  text-decoration: underline;
+}   
+
+
+/* Status Badge */
+.invoice-status {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+.invoice-status.pending {
+  color: #666;
+}
+
+/* Amount Column */
+.amount-column {
+  text-align: right;
+  font-family: monospace;
+  color: #333;
+}
+
+/* Badge/Icon Styling */
+.vendor-name {
+  color: #008080; /* Teal color matching the branding */
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.icon-cell {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.feature-icon {
+  font-size: 1.1rem;
+  color: #008080; /* Teal */
+}
+
+.feature-icon.orange {
+  color: #ff6600;
+}
+
+.feature-icon.blue {
+  color: #008080;
+}
+
+/* ============================================================
+   Pagination Styles
+   ============================================================ */
+
+.content-table-wrapper {
+  width: 100%;
+}
+
+.pagination-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #eaeaea;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-btn {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  color: #4a5568;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: #008fa1;
+  border-color: #008fa1;
+  color: #fff;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination-page {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  color: #4a5568;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.pagination-page:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.pagination-page.active {
+  background-color: #008fa1;
+  border-color: #008fa1;
+  color: #fff;
+}
+
+.pagination-ellipsis {
+  padding: 0 4px;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.pagination-page-size select {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  color: #4a5568;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.pagination-page-size select:hover {
+  border-color: #9ca3af;
+}
+
+.pagination-page-size select:focus {
+  outline: none;
+  border-color: #008fa1;
+  box-shadow: 0 0 0 2px rgba(0, 143, 161, 0.2);
+}
+
+/* Adjust table border radius when pagination is present */
+.content-table-wrapper .content-table {
+  border-radius: 0 0 8px 8px;
+}
+
+/* ============================================================
+   Sorting Styles
+   ============================================================ */
+
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease;
+}
+
+.sortable-header:hover {
+  background-color: #f0f0f0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-start;
+}
+
+.sort-indicator {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.75;
+  font-size: 10px;
+  color: #9ca3af;
+  transition: color 0.15s ease;
+}
+
+.sort-indicator.active {
+  color: #008fa1;
+  font-weight: bold;
+}
+
+/* ============================================================
+   Expandable Row Styles
+   ============================================================ */
+
+.expandable-link {
+  color: #008fa1;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.expandable-link:hover {
+}
+
+.expand-indicator {
+  font-size: 10px;
+  color: #666;
+  transition: transform 0.2s ease;
+}
+
+.expand-indicator.expanded {
+  color: #008fa1;
+}
+
+.expanded-row {
+  background-color: #e8f4f8 !important;
+}
+
+.expanded-content-row {
+  background-color: #f8fbfc;
+}
+
+.expanded-content-row:hover {
+  background-color: #f8fbfc !important;
+}
+
+.expanded-content-container {
+  padding: 16px 20px;
+  border-left: 4px solid #008fa1;
+  margin: 8px 16px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.expanded-content-header {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+.collapse-btn {
+  background: none;
+  border: 1px solid #ccc;
+  color: #666;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.collapse-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #008fa1;
+  color: #008fa1;
+}
+
+.expanded-content-body {
+  width: 100%;
+}
+
+.message-body-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.message-body-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: uppercase;
+}
+
+.message-body-textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 13px;
+  font-family: inherit;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fafafa;
+  resize: vertical;
+  min-height: 80px;
+  color: #333;
+}
+
+/* ============================================================
+   Expanded Row - Entity Employees Grid
+   ============================================================ */
+
+.entity-employees-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.entity-employees-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.entity-employees-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.entity-employee-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 14px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.entity-employee-card:hover {
+  border-color: #cbd5e0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.entity-employee-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 6px;
+}
+
+.entity-employee-title {
+  font-size: 13px;
+  color: #008fa1;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.entity-employee-location {
+  font-size: 12px;
+  color: #718096;
+  margin-bottom: 4px;
+}
+
+.entity-employee-phone {
+  font-size: 12px;
+  color: #718096;
+  font-family: monospace;
+}
+
+/* ============================================================
+   Expanded Row - Person Details
+   ============================================================ */
+
+.person-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.person-details-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d3748;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.person-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 4px 0;
+}
+
+.person-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.person-detail-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.person-detail-value {
+  font-size: 14px;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.person-detail-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #0050b3;
+  font-weight: 500;
+}
+
+.badge-icon {
+  font-size: 14px;
+}
+
+.detail-badge-none {
+  padding: 6px 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #8c8c8c;
+  font-style: italic;
+}
+
+

@@ -1,0 +1,111 @@
+.matters-list-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.matters-column {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.matters-column h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Table Styles */
+.matters-table-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.matters-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.matters-table th {
+  text-align: left;
+  padding: 10px;
+  background-color: #f9fafb;
+  color: #666;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+}
+
+.matters-table td {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+.matters-table tr:hover {
+  background-color: #f5f7fa;
+}
+
+/* Chart Placeholder Styles */
+.charts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.chart-placeholder {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+}
+
+.chart-label {
+  width: 120px;
+  font-size: 0.85rem;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chart-bar-container {
+  flex: 1;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.chart-bar-fill {
+  height: 100%;
+  background-color: #4f46e5; /* Indigo */
+  border-radius: 4px;
+  transition: width 0.5s ease-out;
+}
+
+/* Different colors for variety */
+.chart-item:nth-child(odd) .chart-bar-fill {
+  background-color: #4f46e5;
+}
+
+.chart-item:nth-child(even) .chart-bar-fill {
+  background-color: #10b981; /* Emerald */
+}

@@ -1,0 +1,14 @@
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.main-body {
+  display: flex;
+  flex: 1;
+  /* Determine max-width if necessary, or keep full width */
+  width: 100%;
+  margin-top: 10px; /* Optional spacing between nav and body */
+}

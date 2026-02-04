@@ -1,0 +1,95 @@
+.right-sidebar {
+  width: 250px;
+  background-color: #eefec2; /* Light background behind sidebar? Image looks white/light-grey but let's keep it clean */
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ccc;
+  font-family: "Arial", sans-serif;
+  flex-shrink: 0;
+}
+
+.sidebar-tabs {
+  display: flex;
+  background-color: #e0e0e0;
+}
+
+.sidebar-tab {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 10px 5px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  text-transform: uppercase;
+}
+
+.sidebar-tab.active {
+  background-color: #fff;
+  border-bottom: none; /* Make it look like it connects to the content below */
+  color: #333;
+}
+
+.accordion-container {
+  background-color: #fff;
+  flex: 1;
+  padding: 5px;
+}
+
+.accordion-item {
+  margin-bottom: 5px;
+}
+
+.accordion-header {
+  padding: 8px 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.accordion-header::after {
+  content: "+";
+  font-weight: bold;
+}
+
+.accordion-item.open .accordion-header::after {
+  content: "-";
+}
+
+/* Specific colors */
+.colorClass.teal-blue,
+.accordion-header.teal-blue {
+  background-color: #008fa1; /* Teal color from image */
+}
+
+.accordion-content {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-top: none;
+  font-size: 12px;
+}
+
+.remove-flag-section {
+  padding: 10px;
+}
+
+.remove-flag-btn {
+  background: none;
+  border: none;
+  color: #008fa1;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
