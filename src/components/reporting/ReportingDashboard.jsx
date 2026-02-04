@@ -1,4 +1,3 @@
-import React from "react";
 import { getAnomalies } from "../../utils/metrics";
 import { useInvoiceMetrics } from "./metrics/useInvoiceMetrics";
 import { usePeopleMetrics } from "./metrics/usePeopleMetrics";
@@ -16,103 +15,103 @@ const ReportingDashboard = () => {
   const allMetrics = [
     // Invoice Metrics
     {
-      title: "Total Invoices",
+      title: "Total Invoice Records",
       value: invoiceData.totalInvoices,
-      subtext: "All statuses",
+      subtext: "Across all payment statuses and vendors",
     },
     ...invoiceData.avgAmountByStatus.map((stat) => ({
-      title: stat.status,
+      title: `${stat.status} - Average Invoice Value`,
       value: `$${(stat.avgAmount / 1000).toFixed(1)}k`,
-      subtext: `${stat.count} inv`,
+      subtext: `Based on ${stat.count} invoices in this status`,
     })),
 
     // People Metrics
     {
-      title: "Compliance",
+      title: "Average Compliance Score",
       value: peopleData.entityCompliance.avgScore,
-      subtext: "of 4.0",
+      subtext: "Out of 4.0 maximum rating across all entities",
       trend: peopleData.entityCompliance.avgScore > 3 ? "up" : "down",
     },
     {
-      title: "High Risk",
+      title: "High Risk Entities Flagged",
       value: peopleData.entityCompliance.highRisk.length,
-      subtext: "flagged",
+      subtext: "Organizations requiring immediate attention",
       trend: "down",
     },
     {
-      title: "Workforce",
+      title: "Total Internal Workforce",
       value: peopleData.totalEmployees,
-      subtext: `${peopleData.totalEntities} partners`,
+      subtext: `Working with ${peopleData.totalEntities} external partner organizations`,
     },
 
     // Matters Metrics
     {
-      title: "Total Matters",
+      title: "Total Legal Matters",
       value: mattersData.totalMatters,
-      subtext: "All cases",
+      subtext: "All cases across all practice areas and jurisdictions",
     },
     {
-      title: "Open Matters",
+      title: "Currently Active Matters",
       value: mattersData.openMatters,
-      subtext: `${mattersData.closedMatters} closed`,
+      subtext: `${mattersData.closedMatters} matters have been successfully closed`,
     },
     {
-      title: "Priority A",
+      title: "Priority A Matters",
       value: mattersData.highPriorityCount,
-      subtext: "High priority",
+      subtext: "Highest priority cases requiring immediate attention",
       trend: mattersData.highPriorityCount > 2 ? "down" : "up",
     },
     {
-      title: "Avg Age",
+      title: "Average Matter Age",
       value: `${mattersData.avgMatterAgeDays}d`,
-      subtext: "Open matters",
+      subtext: "Average days since matter opened for active cases",
     },
     {
-      title: "Stale Cases",
+      title: "Stale Cases Identified",
       value: mattersData.staleMatterCount,
-      subtext: ">60 days idle",
+      subtext: "Matters with no activity for more than 60 days",
       trend: mattersData.staleMatterCount > 0 ? "down" : "up",
     },
     {
-      title: "Upcoming Court",
+      title: "Upcoming Court Dates",
       value: mattersData.upcomingCourtDates.length,
-      subtext: "Next 30 days",
+      subtext: "Scheduled hearings and appearances in next 30 days",
     },
     {
-      title: "Federal",
+      title: "Federal Jurisdiction Matters",
       value: mattersData.jurisdictionCounts.Federal || 0,
-      subtext: `${mattersData.jurisdictionCounts.State || 0} State`,
+      subtext: `${mattersData.jurisdictionCounts.State || 0} matters in state jurisdiction`,
     },
 
     // Top metrics from detailed data
     ...invoiceData.avgLineItemsByFirm.slice(0, 2).map((item, i) => ({
-      title: `#${i + 1} Firm Complexity`,
+      title: `Top ${i + 1} - Invoice Complexity by Firm`,
       value: item.avgLineItems,
-      subtext: item.firm.substring(0, 18),
+      subtext: `${item.firm} - Average line items per invoice`,
     })),
 
     ...invoiceData.topLineItems.slice(0, 2).map((item, i) => ({
-      title: `#${i + 1} Service`,
+      title: `Top ${i + 1} - Most Billed Service`,
       value: item.count,
-      subtext: item.name.substring(0, 16),
+      subtext: `${item.name} - Total instances billed`,
     })),
 
     ...peopleData.employeeTitles.slice(0, 2).map((item, i) => ({
-      title: `#${i + 1} Role`,
+      title: `Top ${i + 1} - Most Common Role`,
       value: item[1],
-      subtext: item[0].substring(0, 16),
+      subtext: `${item[0]} - Total employees in this position`,
     })),
 
     ...mattersData.topAreasOfLaw.slice(0, 2).map((item, i) => ({
-      title: `#${i + 1} Practice`,
+      title: `Top ${i + 1} - Practice Area by Volume`,
       value: item[1],
-      subtext: item[0].substring(0, 16),
+      subtext: `${item[0]} - Total matters in this practice`,
     })),
 
     ...mattersData.topClients.slice(0, 2).map((item, i) => ({
-      title: `#${i + 1} Client`,
+      title: `Top ${i + 1} - Client by Matter Count`,
       value: item[1],
-      subtext: item[0].substring(0, 16),
+      subtext: `${item[0]} - Total active and closed matters`,
     })),
   ];
 
@@ -127,8 +126,8 @@ const ReportingDashboard = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-            gap: "12px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "16px",
             width: "100%",
           }}
         >
