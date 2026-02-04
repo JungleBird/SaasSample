@@ -4,7 +4,7 @@ import DropDownMenu from "./menuInteractions/DropDownMenu";
 
 const TopNavigation = ({ activeTab, setActiveTab }) => {
   const tabs = [
-    "My Lawtrac",
+    "My Doctrac",
     "Matters",
     "Finance",
     "People",

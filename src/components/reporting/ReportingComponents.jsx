@@ -1,4 +1,3 @@
-import React from "react";
 import "../../styles/Reporting.css";
 
 export const MetricCard = ({ title, value, subtext, trend }) => (

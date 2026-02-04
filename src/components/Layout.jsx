@@ -38,7 +38,7 @@ const Layout = () => {
 
   const renderContent = () => {
     switch (activeTab) {
-      case "My Lawtrac":
+      case "My Doctrac":
         return <HomeDashboard />;
       case "Matters":
       case "Matters - All":

@@ -53,7 +53,7 @@ const HomeDashboard = () => {
   return (
     <div className="dashboard-container">
       <div className="section-header">
-        <h2>MY LAWTRAC</h2>
+        <h2>MY Doctrac</h2>
       </div>
 
       <div className="dashboard-controls">
