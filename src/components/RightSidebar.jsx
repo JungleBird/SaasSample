@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AccordionMenu from "./MenuInteractions/AccordionMenu";
+import AccordionMenu from "./menuInteractions/AccordionMenu";
 import "../styles/RightSidebar.css";
 
 const RightSidebar = () => {

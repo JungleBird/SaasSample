@@ -3,7 +3,7 @@ import PeopleVendors from "./PeopleVendors";
 import PeopleFirms from "./PeopleFirms";
 import PeopleIndividuals from "./PeopleIndividuals";
 import PeopleInHouse from "./PeopleInHouse";
-import AccordionMenu from "./MenuInteractions/AccordionMenu";
+import AccordionMenu from "./menuInteractions/AccordionMenu";
 import DashboardControlsTabMenu from "./menuInteractions/DashboardControlsTabMenu";
 import "../styles/Dashboard.css";
 
