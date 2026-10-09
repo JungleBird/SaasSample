@@ -10,7 +10,7 @@ import ReportingDashboard from "./reporting/ReportingDashboard";
 import "../styles/Layout.css";
 
 const Layout = () => {
-  const [activeTab, setActiveTab] = useState("Matters");
+  const [activeTab, setActiveTab] = useState("My Doctrac");
   const [selectedMatter, setSelectedMatter] = useState(null);
   const [selectedInvoice, setSelectedInvoice] = useState(null);
 
@@ -39,7 +39,7 @@ const Layout = () => {
   const renderContent = () => {
     switch (activeTab) {
       case "My Doctrac":
-        return <HomeDashboard />;
+        return <HomeDashboard onSelectMatter={onSelectMatter} />;
       case "Matters":
       case "Matters - All":
       case "Matters - Open":

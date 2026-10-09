@@ -126,9 +126,10 @@ const ReportingDashboard = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(240px, 100%), 1fr))",
             gap: "16px",
             width: "100%",
+            minWidth: 0,
           }}
         >
           {allMetrics.map((metric, index) => (

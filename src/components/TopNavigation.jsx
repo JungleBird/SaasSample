@@ -16,7 +16,7 @@ const TopNavigation = ({ activeTab, setActiveTab }) => {
     <div className="top-nav-container">
       <div className="app-header">
         <div className="logo-section">
-          <h1>Doctrack</h1>
+          <h1>Doctrac</h1>
           <span className="subtitle">
             Content Management Solutions for In-House Legal Departments
           </span>

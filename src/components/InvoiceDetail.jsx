@@ -263,7 +263,7 @@ const InvoiceDetail = ({ invoice, onSelectMatter, onBack }) => {
                       fontSize: "12px",
                     }}
                   >
-                    <span>1. DocTrack Training</span>
+                    <span>1. DocTrac Training</span>
                     <span style={{ color: "red" }}>
                       {invoice.status === "Rejected" ? "Rejected" : "Pending"}
                     </span>

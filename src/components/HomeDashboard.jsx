@@ -3,7 +3,7 @@ import EventCalendar from "./menuInteractions/EventCalendar";
 import { matters } from "../data/matters/matters";
 import "../styles/HomeDashboard.css";
 
-const HomeDashboard = () => {
+const HomeDashboard = ({ onSelectMatter }) => {
   const [activeTab, setActiveTab] = useState("Announcements");
   const [hoveredEventName, setHoveredEventName] = useState(null);
 
@@ -39,7 +39,13 @@ const HomeDashboard = () => {
             <span className="message-date">
               {formatDateToMMDD(matter.reviewDate)}
             </span>
-            <span className="message-subject">{matter.name}</span>
+            <button
+              type="button"
+              className="message-subject"
+              onClick={() => onSelectMatter(matter)}
+            >
+              {matter.name}
+            </button>
           </div>
         ))}
       </div>
